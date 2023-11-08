@@ -6,6 +6,16 @@
 ## Introduction
 AI Hub is the nexus of personal computing: a single, persistent AI assistant interface designed to streamline your interactions with your computer. By providing a central "face" to the multitude of processes and applications you use daily, AI Hub seeks to enhance productivity and simplify your digital experience.
 
+## How AI Hub Works
+
+The AI Hub is structured to host a variety of specialized AI assistants, each with unique capabilities and knowledge bases. The architecture is straightforward:
+
+- Each assistant has a `.py` script dedicated to its "main" functions. Initially, these scripts contain all the functions available to that particular assistant.
+- Functions are exclusive to one assistant to minimize code duplication and restrict access. Shared functions are placed in a "common knowledge" file to encourage communication between assistants.
+- The primary communication method between assistants is email, which facilitates a log of interactions and an accessible format for collaboration.
+- Assistants schedule meetings with each other and the user, enabling direct involvement and oversight of the AI's operations and decisions.
+- The "Work" assistant is particularly focused on ensuring a healthy work-life balance, scheduling work efficiently while protecting personal time and well-being.
+
 ## Features
 ### Chapter 1: The Interface
 - **Minimalist Design**: A simple window with a dynamic circle animation representing the AI, embodying the assistant's current status and activity.
@@ -80,3 +90,18 @@ The aim is for Office Assistant to evolve into a tool that not only manages your
 By leveraging Office Assistant, you're not just staying on top of your schedule; you're building an intelligent, self-organizing archive of your professional interactions and commitments.
 
 Keep an eye out for continuous enhancements to Office Assistant, as we're dedicated to introducing more features to empower you to reclaim time for what matters most.
+
+### Chapter 4: Work-Life Balance Assistant
+
+#### Ensuring Well-Being with AI
+The AI Hub introduces an innovative assistant specializing in work-life balance, designed to prioritize your health and personal time alongside your professional obligations.
+
+#### Features
+- **Work Appointment Scheduling**: Integrates with your calendar to set "work" appointments, reflecting the assistant's support for your professional tasks.
+- **Balance Monitoring**: Analyzes your schedule for imbalances, such as excessive work or insufficient personal time, and suggests corrective measures.
+- **Health and Personal Time Protection**: Observes your work habits and sleep schedule to prevent health and personal life from being compromised.
+- **Adaptive Scheduling**: Dynamically adjusts your work schedule based on personal needs and professional deadlines to maintain a harmonious balance.
+- **User-Centric Design**: While the assistant provides suggestions for a balanced schedule, the final decisions remain in your hands, ensuring the system conforms to your lifestyle.
+
+#### Seamless Integration with Daily Life
+This assistant is not merely a tool for scheduling but a companion attuned to the intricacies of a balanced lifestyle, proactively managing your professional and personal time.
