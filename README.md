@@ -45,6 +45,8 @@ Office Assistant is a cutting-edge feature within AI Hub that synergizes the adv
 
 Link your Outlook account to AI Hub effortlessly, granting the AI the ability to assist you with your emails securely and efficiently.
 
+![DALL·E 2023-11-08 21 37 45 - Design a sleek and modern logo for a feature called 'Office Assistant' which is an AI-powered productivity tool that integrates with email clients lik](https://github.com/NADOOITChristophBa/AI-Hub/assets/106314951/a1ffd473-86a8-4e80-a463-6a273710acbf)
+
 ### Features of Office Assistant
 
 #### Email Management
