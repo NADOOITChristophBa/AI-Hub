@@ -1,3 +1,7 @@
+
+![DALL·E 2023-11-08 20 26 02 - Add the text _AI HUB_ to the previously generated logo design that symbolizes artificial intelligence and centralization  The text should be in a mode](https://github.com/NADOOITChristophBa/AI-Hub/assets/106314951/f64f7d4b-1144-47a4-bbcf-7bc3c61467b2)
+
+
 Project Codename: AI Hub
 "Empower Your Computer, Unleash Your Potential"
 Introduction
@@ -28,4 +32,3 @@ Details about the project's licensing and usage rights.
 
 Support and Contact
 Information on where to seek help, report issues, and contact the maintainers.
-![DALL·E 2023-11-08 20 24 28 - Create a logo for a project called _AI Hub _ The logo should symbolize artificial intelligence and centralization, possibly featuring a stylized neura](https://github.com/NADOOITChristophBa/AI-Hub/assets/106314951/4af95a08-f11d-44ea-b65c-f0610e112248)
