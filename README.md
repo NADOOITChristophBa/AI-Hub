@@ -28,3 +28,4 @@ Details about the project's licensing and usage rights.
 
 Support and Contact
 Information on where to seek help, report issues, and contact the maintainers.
+![DALL·E 2023-11-08 20 24 28 - Create a logo for a project called _AI Hub _ The logo should symbolize artificial intelligence and centralization, possibly featuring a stylized neura](https://github.com/NADOOITChristophBa/AI-Hub/assets/106314951/4af95a08-f11d-44ea-b65c-f0610e112248)
