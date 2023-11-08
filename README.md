@@ -91,6 +91,8 @@ By leveraging Office Assistant, you're not just staying on top of your schedule;
 
 Keep an eye out for continuous enhancements to Office Assistant, as we're dedicated to introducing more features to empower you to reclaim time for what matters most.
 
+![DALL·E 2023-11-08 22 07 07 - Design a logo representing a Work-Life Balance Assistant  The logo should depict a balance scale with one side showing a simplified representation of  (1)](https://github.com/NADOOITChristophBa/AI-Hub/assets/106314951/48799909-1ae7-4d0a-b8a3-9d068a19ce08)
+
 ### Chapter 4: Work-Life Balance Assistant
 
 #### Ensuring Well-Being with AI
