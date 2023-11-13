@@ -1,0 +1,785 @@
+[
+    {
+        "label": "glob",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "glob",
+        "description": "glob",
+        "detail": "glob",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "sysconfig",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sysconfig",
+        "description": "sysconfig",
+        "detail": "sysconfig",
+        "documentation": {}
+    },
+    {
+        "label": "tempfile",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tempfile",
+        "description": "tempfile",
+        "detail": "tempfile",
+        "documentation": {}
+    },
+    {
+        "label": "site",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "site",
+        "description": "site",
+        "detail": "site",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "toga",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "toga",
+        "description": "toga",
+        "detail": "toga",
+        "documentation": {}
+    },
+    {
+        "label": "Pack",
+        "importPath": "toga.style",
+        "description": "toga.style",
+        "isExtraImport": true,
+        "detail": "toga.style",
+        "documentation": {}
+    },
+    {
+        "label": "COLUMN",
+        "importPath": "toga.style.pack",
+        "description": "toga.style.pack",
+        "isExtraImport": true,
+        "detail": "toga.style.pack",
+        "documentation": {}
+    },
+    {
+        "label": "ROW",
+        "importPath": "toga.style.pack",
+        "description": "toga.style.pack",
+        "isExtraImport": true,
+        "detail": "toga.style.pack",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "openai",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "openai",
+        "description": "openai",
+        "detail": "openai",
+        "documentation": {}
+    },
+    {
+        "label": "OpenAI",
+        "importPath": "openai",
+        "description": "openai",
+        "isExtraImport": true,
+        "detail": "openai",
+        "documentation": {}
+    },
+    {
+        "label": "sqlite3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlite3",
+        "description": "sqlite3",
+        "detail": "sqlite3",
+        "documentation": {}
+    },
+    {
+        "label": "win32com.client",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "win32com.client",
+        "description": "win32com.client",
+        "detail": "win32com.client",
+        "documentation": {}
+    },
+    {
+        "label": "win32com.client.gencache",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "win32com.client.gencache",
+        "description": "win32com.client.gencache",
+        "detail": "win32com.client.gencache",
+        "documentation": {}
+    },
+    {
+        "label": "ContextVar",
+        "importPath": "contextvars",
+        "description": "contextvars",
+        "isExtraImport": true,
+        "detail": "contextvars",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "threading",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "threading",
+        "description": "threading",
+        "detail": "threading",
+        "documentation": {}
+    },
+    {
+        "label": "Tee",
+        "kind": 6,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "class Tee:\n    def __init__(self, file):\n        self.f = file\n    def write(self, what):\n        if self.f is not None:\n            try:\n                self.f.write(what.replace(\"\\n\", \"\\r\\n\"))\n            except IOError:\n                pass\n        tee_f.write(what)",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "CopyTo",
+        "kind": 2,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def CopyTo(desc, src, dest):\n    import win32api\n    import win32con\n    while 1:\n        try:\n            win32api.CopyFile(src, dest, 0)\n            return\n        except win32api.error as details:\n            if details.winerror == 5:  # access denied - user not admin.\n                raise",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "LoadSystemModule",
+        "kind": 2,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def LoadSystemModule(lib_dir, modname):\n    # See if this is a debug build.\n    import importlib.machinery\n    import importlib.util\n    suffix = \"_d\" if \"_d.pyd\" in importlib.machinery.EXTENSION_SUFFIXES else \"\"\n    filename = \"%s%d%d%s.dll\" % (\n        modname,\n        sys.version_info[0],\n        sys.version_info[1],\n        suffix,",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "SetPyKeyVal",
+        "kind": 2,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def SetPyKeyVal(key_name, value_name, value):\n    root_hkey = get_root_hkey()\n    root_key = winreg.OpenKey(root_hkey, root_key_name)\n    try:\n        my_key = winreg.CreateKey(root_key, key_name)\n        try:\n            winreg.SetValueEx(my_key, value_name, 0, winreg.REG_SZ, value)\n            if verbose:\n                print(\"-> %s\\\\%s[%s]=%r\" % (root_key_name, key_name, value_name, value))\n        finally:",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "UnsetPyKeyVal",
+        "kind": 2,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def UnsetPyKeyVal(key_name, value_name, delete_key=False):\n    root_hkey = get_root_hkey()\n    root_key = winreg.OpenKey(root_hkey, root_key_name)\n    try:\n        my_key = winreg.OpenKey(root_key, key_name, 0, winreg.KEY_SET_VALUE)\n        try:\n            winreg.DeleteValue(my_key, value_name)\n            if verbose:\n                print(\"-> DELETE %s\\\\%s[%s]\" % (root_key_name, key_name, value_name))\n        finally:",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "RegisterCOMObjects",
+        "kind": 2,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def RegisterCOMObjects(register=True):\n    import win32com.server.register\n    if register:\n        func = win32com.server.register.RegisterClasses\n    else:\n        func = win32com.server.register.UnregisterClasses\n    flags = {}\n    if not verbose:\n        flags[\"quiet\"] = 1\n    for module, klass_name in com_modules:",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "RegisterHelpFile",
+        "kind": 2,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def RegisterHelpFile(register=True, lib_dir=None):\n    if lib_dir is None:\n        lib_dir = sysconfig.get_paths()[\"platlib\"]\n    if register:\n        # Register the .chm help file.\n        chm_file = os.path.join(lib_dir, \"PyWin32.chm\")\n        if os.path.isfile(chm_file):\n            # This isn't recursive, so if 'Help' doesn't exist, we croak\n            SetPyKeyVal(\"Help\", None, None)\n            SetPyKeyVal(\"Help\\\\Pythonwin Reference\", None, chm_file)",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "RegisterPythonwin",
+        "kind": 2,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def RegisterPythonwin(register=True, lib_dir=None):\n    \"\"\"Add (or remove) Pythonwin to context menu for python scripts.\n    ??? Should probably also add Edit command for pys files also.\n    Also need to remove these keys on uninstall, but there's no function\n        like file_created to add registry entries to uninstall log ???\n    \"\"\"\n    import os\n    if lib_dir is None:\n        lib_dir = sysconfig.get_paths()[\"platlib\"]\n    classes_root = get_root_hkey()",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "get_shortcuts_folder",
+        "kind": 2,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def get_shortcuts_folder():\n    if get_root_hkey() == winreg.HKEY_LOCAL_MACHINE:\n        try:\n            fldr = get_special_folder_path(\"CSIDL_COMMON_PROGRAMS\")\n        except OSError:\n            # No CSIDL_COMMON_PROGRAMS on this platform\n            fldr = get_special_folder_path(\"CSIDL_PROGRAMS\")\n    else:\n        # non-admin install - always goes in this user's start menu.\n        fldr = get_special_folder_path(\"CSIDL_PROGRAMS\")",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "get_system_dir",
+        "kind": 2,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def get_system_dir():\n    import win32api  # we assume this exists.\n    try:\n        import pythoncom\n        import win32process\n        from win32com.shell import shell, shellcon\n        try:\n            if win32process.IsWow64Process():\n                return shell.SHGetSpecialFolderPath(0, shellcon.CSIDL_SYSTEMX86)\n            return shell.SHGetSpecialFolderPath(0, shellcon.CSIDL_SYSTEM)",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "fixup_dbi",
+        "kind": 2,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def fixup_dbi():\n    # We used to have a dbi.pyd with our .pyd files, but now have a .py file.\n    # If the user didn't uninstall, they will find the .pyd which will cause\n    # problems - so handle that.\n    import win32api\n    import win32con\n    pyd_name = os.path.join(os.path.dirname(win32api.__file__), \"dbi.pyd\")\n    pyd_d_name = os.path.join(os.path.dirname(win32api.__file__), \"dbi_d.pyd\")\n    py_name = os.path.join(os.path.dirname(win32con.__file__), \"dbi.py\")\n    for this_pyd in (pyd_name, pyd_d_name):",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "install",
+        "kind": 2,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def install(lib_dir):\n    import traceback\n    # The .pth file is now installed as a regular file.\n    # Create the .pth file in the site-packages dir, and use only relative paths\n    # We used to write a .pth directly to sys.prefix - clobber it.\n    if os.path.isfile(os.path.join(sys.prefix, \"pywin32.pth\")):\n        os.unlink(os.path.join(sys.prefix, \"pywin32.pth\"))\n    # The .pth may be new and therefore not loaded in this session.\n    # Setup the paths just in case.\n    for name in \"win32 win32\\\\lib Pythonwin\".split():",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "uninstall",
+        "kind": 2,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def uninstall(lib_dir):\n    # First ensure our system modules are loaded from pywin32_system, so\n    # we can remove the ones we copied...\n    LoadSystemModule(lib_dir, \"pywintypes\")\n    LoadSystemModule(lib_dir, \"pythoncom\")\n    try:\n        RegisterCOMObjects(False)\n    except Exception as why:\n        print(\"Failed to unregister COM objects: %s\" % (why,))\n    try:",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "verify_destination",
+        "kind": 2,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def verify_destination(location):\n    if not os.path.isdir(location):\n        raise argparse.ArgumentTypeError('Path \"{}\" does not exist!'.format(location))\n    return location\ndef main():\n    import argparse\n    parser = argparse.ArgumentParser(\n        formatter_class=argparse.RawDescriptionHelpFormatter,\n        description=\"\"\"A post-install script for the pywin32 extensions.\n    * Typical usage:",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def main():\n    import argparse\n    parser = argparse.ArgumentParser(\n        formatter_class=argparse.RawDescriptionHelpFormatter,\n        description=\"\"\"A post-install script for the pywin32 extensions.\n    * Typical usage:\n    > python pywin32_postinstall.py -install\n    If you installed pywin32 via a .exe installer, this should be run\n    automatically after installation, but if it fails you can run it again.\n    If you installed pywin32 via PIP, you almost certainly need to run this to",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "tee_f",
+        "kind": 5,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "tee_f = open(os.path.join(tempfile.gettempdir(), \"pywin32_postinstall.log\"), \"w\")\nclass Tee:\n    def __init__(self, file):\n        self.f = file\n    def write(self, what):\n        if self.f is not None:\n            try:\n                self.f.write(what.replace(\"\\n\", \"\\r\\n\"))\n            except IOError:\n                pass",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "sys.stderr",
+        "kind": 5,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "sys.stderr = Tee(sys.stderr)\nsys.stdout = Tee(sys.stdout)\ncom_modules = [\n    # module_name,                      class_names\n    (\"win32com.servers.interp\", \"Interpreter\"),\n    (\"win32com.servers.dictionary\", \"DictionaryPolicy\"),\n    (\"win32com.axscript.client.pyscript\", \"PyScript\"),\n]\n# Is this a 'silent' install - ie, avoid all dialogs.\n# Different than 'verbose'",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "sys.stdout",
+        "kind": 5,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "sys.stdout = Tee(sys.stdout)\ncom_modules = [\n    # module_name,                      class_names\n    (\"win32com.servers.interp\", \"Interpreter\"),\n    (\"win32com.servers.dictionary\", \"DictionaryPolicy\"),\n    (\"win32com.axscript.client.pyscript\", \"PyScript\"),\n]\n# Is this a 'silent' install - ie, avoid all dialogs.\n# Different than 'verbose'\nsilent = 0",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "com_modules",
+        "kind": 5,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "com_modules = [\n    # module_name,                      class_names\n    (\"win32com.servers.interp\", \"Interpreter\"),\n    (\"win32com.servers.dictionary\", \"DictionaryPolicy\"),\n    (\"win32com.axscript.client.pyscript\", \"PyScript\"),\n]\n# Is this a 'silent' install - ie, avoid all dialogs.\n# Different than 'verbose'\nsilent = 0\n# Verbosity of output messages.",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "silent",
+        "kind": 5,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "silent = 0\n# Verbosity of output messages.\nverbose = 1\nroot_key_name = \"Software\\\\Python\\\\PythonCore\\\\\" + sys.winver\ntry:\n    # When this script is run from inside the bdist_wininst installer,\n    # file_created() and directory_created() are additional builtin\n    # functions which write lines to Python23\\pywin32-install.log. This is\n    # a list of actions for the uninstaller, the format is inspired by what\n    # the Wise installer also creates.",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "verbose",
+        "kind": 5,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "verbose = 1\nroot_key_name = \"Software\\\\Python\\\\PythonCore\\\\\" + sys.winver\ntry:\n    # When this script is run from inside the bdist_wininst installer,\n    # file_created() and directory_created() are additional builtin\n    # functions which write lines to Python23\\pywin32-install.log. This is\n    # a list of actions for the uninstaller, the format is inspired by what\n    # the Wise installer also creates.\n    file_created\n    is_bdist_wininst = True",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "root_key_name",
+        "kind": 5,
+        "importPath": "venv.Scripts.pywin32_postinstall",
+        "description": "venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "root_key_name = \"Software\\\\Python\\\\PythonCore\\\\\" + sys.winver\ntry:\n    # When this script is run from inside the bdist_wininst installer,\n    # file_created() and directory_created() are additional builtin\n    # functions which write lines to Python23\\pywin32-install.log. This is\n    # a list of actions for the uninstaller, the format is inspired by what\n    # the Wise installer also creates.\n    file_created\n    is_bdist_wininst = True\nexcept NameError:",
+        "detail": "venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "run_test",
+        "kind": 2,
+        "importPath": "venv.Scripts.pywin32_testall",
+        "description": "venv.Scripts.pywin32_testall",
+        "peekOfCode": "def run_test(script, cmdline_extras):\n    dirname, scriptname = os.path.split(script)\n    # some tests prefer to be run from their directory.\n    cmd = [sys.executable, \"-u\", scriptname] + cmdline_extras\n    print(\"--- Running '%s' ---\" % script)\n    sys.stdout.flush()\n    result = subprocess.run(cmd, check=False, cwd=dirname)\n    print(\"*** Test script '%s' exited with %s\" % (script, result.returncode))\n    sys.stdout.flush()\n    if result.returncode:",
+        "detail": "venv.Scripts.pywin32_testall",
+        "documentation": {}
+    },
+    {
+        "label": "find_and_run",
+        "kind": 2,
+        "importPath": "venv.Scripts.pywin32_testall",
+        "description": "venv.Scripts.pywin32_testall",
+        "peekOfCode": "def find_and_run(possible_locations, extras):\n    for maybe in possible_locations:\n        if os.path.isfile(maybe):\n            run_test(maybe, extras)\n            break\n    else:\n        raise RuntimeError(\n            \"Failed to locate a test script in one of %s\" % possible_locations\n        )\ndef main():",
+        "detail": "venv.Scripts.pywin32_testall",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "venv.Scripts.pywin32_testall",
+        "description": "venv.Scripts.pywin32_testall",
+        "peekOfCode": "def main():\n    import argparse\n    code_directories = [this_dir] + site_packages\n    parser = argparse.ArgumentParser(\n        description=\"A script to trigger tests in all subprojects of PyWin32.\"\n    )\n    parser.add_argument(\n        \"-no-user-interaction\",\n        default=False,\n        action=\"store_true\",",
+        "detail": "venv.Scripts.pywin32_testall",
+        "documentation": {}
+    },
+    {
+        "label": "this_dir",
+        "kind": 5,
+        "importPath": "venv.Scripts.pywin32_testall",
+        "description": "venv.Scripts.pywin32_testall",
+        "peekOfCode": "this_dir = os.path.dirname(__file__)\nsite_packages = [\n    site.getusersitepackages(),\n] + site.getsitepackages()\nfailures = []\n# Run a test using subprocess and wait for the result.\n# If we get an returncode != 0, we know that there was an error, but we don't\n# abort immediately - we run as many tests as we can.\ndef run_test(script, cmdline_extras):\n    dirname, scriptname = os.path.split(script)",
+        "detail": "venv.Scripts.pywin32_testall",
+        "documentation": {}
+    },
+    {
+        "label": "site_packages",
+        "kind": 5,
+        "importPath": "venv.Scripts.pywin32_testall",
+        "description": "venv.Scripts.pywin32_testall",
+        "peekOfCode": "site_packages = [\n    site.getusersitepackages(),\n] + site.getsitepackages()\nfailures = []\n# Run a test using subprocess and wait for the result.\n# If we get an returncode != 0, we know that there was an error, but we don't\n# abort immediately - we run as many tests as we can.\ndef run_test(script, cmdline_extras):\n    dirname, scriptname = os.path.split(script)\n    # some tests prefer to be run from their directory.",
+        "detail": "venv.Scripts.pywin32_testall",
+        "documentation": {}
+    },
+    {
+        "label": "failures",
+        "kind": 5,
+        "importPath": "venv.Scripts.pywin32_testall",
+        "description": "venv.Scripts.pywin32_testall",
+        "peekOfCode": "failures = []\n# Run a test using subprocess and wait for the result.\n# If we get an returncode != 0, we know that there was an error, but we don't\n# abort immediately - we run as many tests as we can.\ndef run_test(script, cmdline_extras):\n    dirname, scriptname = os.path.split(script)\n    # some tests prefer to be run from their directory.\n    cmd = [sys.executable, \"-u\", scriptname] + cmdline_extras\n    print(\"--- Running '%s' ---\" % script)\n    sys.stdout.flush()",
+        "detail": "venv.Scripts.pywin32_testall",
+        "documentation": {}
+    },
+    {
+        "label": "submit_command",
+        "kind": 2,
+        "importPath": "ai_hub_gui",
+        "description": "ai_hub_gui",
+        "peekOfCode": "def submit_command(widget):\n    # Placeholder for command submission logic\n    print(\"Command submitted\")\ndef build(app):\n    # Create a main window with a title\n    main_window = toga.MainWindow(title=\"AI Hub\")\n    # Create a button\n    button = toga.Button(\"Submit\", on_press=submit_command, style=Pack(padding=5))\n    # Create text input box\n    text_input = toga.TextInput(",
+        "detail": "ai_hub_gui",
+        "documentation": {}
+    },
+    {
+        "label": "build",
+        "kind": 2,
+        "importPath": "ai_hub_gui",
+        "description": "ai_hub_gui",
+        "peekOfCode": "def build(app):\n    # Create a main window with a title\n    main_window = toga.MainWindow(title=\"AI Hub\")\n    # Create a button\n    button = toga.Button(\"Submit\", on_press=submit_command, style=Pack(padding=5))\n    # Create text input box\n    text_input = toga.TextInput(\n        placeholder=\"Type your command here\", style=Pack(flex=1, padding=5)\n    )\n    # Create an output box - multi-line text input that is read-only",
+        "detail": "ai_hub_gui",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "ai_hub_gui",
+        "description": "ai_hub_gui",
+        "peekOfCode": "app = toga.App(\"AI Hub\", \"org.beeware.helloworld\", startup=build)\n# Run the Toga application\napp.main_loop()",
+        "detail": "ai_hub_gui",
+        "documentation": {}
+    },
+    {
+        "label": "MatrixDatabaseContextManager",
+        "kind": 6,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "class MatrixDatabaseContextManager:\n    _lock = threading.Lock()\n    _ref_count = 0\n    def __enter__(self):\n        with MatrixDatabaseContextManager._lock:\n            MatrixDatabaseContextManager._ref_count += 1\n            connection = matrix_connection_var.get(None)\n            if connection is None:\n                connection = sqlite3.connect(\"Matrix.db\")\n                matrix_connection_var.set(connection)",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "Appointment",
+        "kind": 6,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "class Appointment:\n    def __init__(self, **kwargs):\n        for key, value in kwargs.items():\n            setattr(self, key, value)\n    @classmethod\n    def from_json(cls, data):\n        try:\n            details = json.loads(data) if isinstance(data, str) else data\n            if not isinstance(details, dict):\n                raise ValueError(",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "Email",
+        "kind": 6,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "class Email:\n    def __init__(self, **kwargs):\n        for key, value in kwargs.items():\n            setattr(self, key, value)\n    def __str__(self):\n        return f\"Email from {self.sender} <{self.sender_email}> received at {self.received_time}: {self.subject}\"\ndef clean_email_content(email_content):\n    # Remove URLs from the email content\n    email_content = re.sub(r\"http\\S+\", \"\", email_content)\n    # Remove sequences of '<' possibly interspersed with whitespace and newlines",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "with_matrix_db_context",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def with_matrix_db_context(func):\n    def wrapper(*args, **kwargs):\n        with MatrixDatabaseContextManager() as cursor:\n            # Explicitly pass the cursor as an argument to the function\n            return func(*args, **kwargs, cursor=cursor)\n    return wrapper\ndef get_matrix_connection():\n    matrix_connection = sqlite3.connect(\"Matrix.db\")\n    return matrix_connection\ndef get_matix_cursor_for_matrix_connection(matrix_connection):",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "get_matrix_connection",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def get_matrix_connection():\n    matrix_connection = sqlite3.connect(\"Matrix.db\")\n    return matrix_connection\ndef get_matix_cursor_for_matrix_connection(matrix_connection):\n    return matrix_connection.cursor()\nclass Appointment:\n    def __init__(self, **kwargs):\n        for key, value in kwargs.items():\n            setattr(self, key, value)\n    @classmethod",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "get_matix_cursor_for_matrix_connection",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def get_matix_cursor_for_matrix_connection(matrix_connection):\n    return matrix_connection.cursor()\nclass Appointment:\n    def __init__(self, **kwargs):\n        for key, value in kwargs.items():\n            setattr(self, key, value)\n    @classmethod\n    def from_json(cls, data):\n        try:\n            details = json.loads(data) if isinstance(data, str) else data",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "clean_email_content",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def clean_email_content(email_content):\n    # Remove URLs from the email content\n    email_content = re.sub(r\"http\\S+\", \"\", email_content)\n    # Remove sequences of '<' possibly interspersed with whitespace and newlines\n    email_content = re.sub(r\"(\\s*<\\s*)+\", \" \", email_content)\n    # Additional cleanup could go here if needed\n    return email_content.strip()\ndef create_oulook_calender_appointment_for_appointment(outlook, appointment_data):\n    \"\"\"\n    Create an appointment in Outlook from given appointment data.",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "create_oulook_calender_appointment_for_appointment",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def create_oulook_calender_appointment_for_appointment(outlook, appointment_data):\n    \"\"\"\n    Create an appointment in Outlook from given appointment data.\n    \"\"\"\n    # Parse the appointment data\n    appointment = Appointment.from_json(appointment_data)\n    if not appointment:\n        print(\"Invalid appointment data\")\n        return\n    namespace = outlook.GetNamespace(\"MAPI\")",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "send_email_via_outlook",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def send_email_via_outlook(outlook, subject, body, recipient):\n    \"\"\"Send an email using a provided Outlook instance.\"\"\"\n    mail = outlook.CreateItem(0)\n    mail.Subject = subject\n    mail.Body = body\n    mail.To = recipient\n    mail.Send()\ndef get_unread_emails_from_outlook(outlook, count=1):\n    print(\"Connecting to Outlook...\")\n    namespace = outlook.GetNamespace(\"MAPI\")",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "get_unread_emails_from_outlook",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def get_unread_emails_from_outlook(outlook, count=1):\n    print(\"Connecting to Outlook...\")\n    namespace = outlook.GetNamespace(\"MAPI\")\n    inbox = namespace.GetDefaultFolder(\n        constants.olFolderInbox\n    )  # Use the constant for inbox\n    print(\"Getting inbox items...\")\n    messages = inbox.Items\n    messages.Sort(\"[ReceivedTime]\", True)\n    print(\"Filtering unread messages...\")",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "check_email_contains_appointment",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def check_email_contains_appointment(sender_email: Email) -> List[Appointment]:\n    \"\"\"Determine if the email is about appointments and return the details as a list.\"\"\"\n    client = OpenAI()\n    # Fetch required fields for appointment details from the database\n    required_fields = get_appointment_detail_fields()\n    required_fields_str = \", \".join(\n        required_fields\n    )  # Convert list to a comma-separated string\n    # Clean up the email content\n    email_content = clean_email_content(sender_email.body)",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "add_appointment_detail_field",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def add_appointment_detail_field(field_name: str, cursor):\n    try:\n        # Check if the field already exists\n        cursor.execute(\n            \"SELECT COUNT(*) FROM appointment_details WHERE field_name = ?\",\n            (field_name,),\n        )\n        if cursor.fetchone()[0] == 0:\n            # Insert the new field\n            cursor.execute(",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "ensure_appointment_details_table_exists",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def ensure_appointment_details_table_exists(cursor):\n    # Check if the appointment_details table exists\n    cursor.execute(\n        \"SELECT name FROM sqlite_master WHERE type='table' AND name='appointment_details'\"\n    )\n    table_exists = cursor.fetchone()\n    # If the table doesn't exist, create it\n    if not table_exists:\n        cursor.execute(\n            \"\"\"CREATE TABLE appointment_details (",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "get_appointment_detail_fields",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def get_appointment_detail_fields(cursor):\n    ensure_appointment_details_table_exists()\n    # Retrieve and return all appointment detail fields\n    cursor.execute(\"SELECT field_name FROM appointment_details\")\n    return [row[0] for row in cursor.fetchall()]\n@with_matrix_db_context\ndef add_email_type(new_email_type: str, cursor):\n    try:\n        # Check if the email type already exists\n        cursor.execute(",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "add_email_type",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def add_email_type(new_email_type: str, cursor):\n    try:\n        # Check if the email type already exists\n        cursor.execute(\n            \"SELECT COUNT(*) FROM email_types WHERE type_name = ?\", (new_email_type,)\n        )\n        if cursor.fetchone()[0] == 0:\n            # Insert the new email type\n            cursor.execute(\n                \"INSERT INTO email_types (type_name) VALUES (?)\", (new_email_type,)",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "get_email_types_for_matrix_cursor",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def get_email_types_for_matrix_cursor(cursor):\n    # Check if the email_types table exists\n    cursor.execute(\n        \"SELECT name FROM sqlite_master WHERE type='table' AND name='email_types'\"\n    )\n    table_exists = cursor.fetchone()\n    # If the table doesn't exist, create it and insert default types\n    if not table_exists:\n        cursor.execute(\n            \"\"\"CREATE TABLE email_types (",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "get_email_types_form_matrix",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def get_email_types_form_matrix():\n    email_types = get_email_types_for_matrix_cursor()\n    return email_types\ndef get_email_type_for_email(email: Email) -> Optional[str]:\n    # Retrieve the current list of email types\n    email_types = get_email_types_form_matrix()\n    email_types_string = \", \".join(f'\"{etype}\"' for etype in email_types)\n    print(email_types)\n    # Initialize the OpenAI client\n    client = OpenAI()",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "get_email_type_for_email",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def get_email_type_for_email(email: Email) -> Optional[str]:\n    # Retrieve the current list of email types\n    email_types = get_email_types_form_matrix()\n    email_types_string = \", \".join(f'\"{etype}\"' for etype in email_types)\n    print(email_types)\n    # Initialize the OpenAI client\n    client = OpenAI()\n    # Construct the messages for the AI\n    messages = [\n        {",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "get_read_email_from_unread_email",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def get_read_email_from_unread_email(unread_email: Email):\n    print(\"Checking email type...\")  # Diagnostic print\n    email_type = get_email_type_for_email(unread_email)\n    if email_type:\n        print(\"Email type identified:\", email_type)  # Diagnostic print\n    else:\n        print(\"Email type could not be determined.\")  # Diagnostic print\n        return  # Early return if email type cannot be determined\n    print(\"Checking for appointments in the email...\")  # Diagnostic print\n    appointments = check_email_contains_appointment(unread_email)",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "find_outlook_email",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def find_outlook_email(outlook, email_obj):\n    print(\"Connecting to Outlook...\")\n    namespace = outlook.GetNamespace(\"MAPI\")\n    inbox = namespace.GetDefaultFolder(constants.olFolderInbox)\n    print(\"Searching for the specific email...\")\n    for msg in inbox.Items:\n        # Assuming subject, sender email, and received time are enough to uniquely identify an email\n        if (\n            msg.Subject == email_obj.subject\n            and msg.SenderEmailAddress == email_obj.sender_email",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "display_folder_tree",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def display_folder_tree(folder, level=0):\n    \"\"\"\n    Recursively display the folder structure in a tree-like format.\n    :param folder: The current folder to display.\n    :param level: The current level in the folder hierarchy (used for indentation).\n    :return: None\n    \"\"\"\n    indent = \" \" * 4 * level  # 4 spaces for each level of indentation\n    print(f\"{indent}- {folder.Name}\")\n    try:",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "visualize_folder_structure",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def visualize_folder_structure(outlook):\n    \"\"\"\n    Visualize the folder structure of an Outlook account.\n    :param outlook: The outlook instance.\n    :return: None\n    \"\"\"\n    namespace = outlook.GetNamespace(\"MAPI\")\n    root_folder = namespace.Folders.Item(\n        1\n    )  # Usually the first item is the primary account",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "create_folder",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def create_folder(outlook, folder_name, parent_folder):\n    \"\"\"\n    Create a folder in Outlook within a specified parent folder.\n    :param outlook: The outlook instance.\n    :param folder_name: The name of the folder to be created.\n    :param parent_folder: The parent folder object.\n    :return: The created folder object or None if failed.\n    \"\"\"\n    try:\n        new_folder = parent_folder.Folders.Add(folder_name)",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "find_folder",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def find_folder(folder, folder_name):\n    \"\"\"\n    Recursively search for a folder with the given name.\n    :param folder: The current folder to search in.\n    :param folder_name: The name of the folder to find.\n    :return: The folder if found, otherwise None.\n    \"\"\"\n    if folder.Name.lower() == folder_name.lower():\n        return folder\n    try:",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "create_folders_recursive",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def create_folders_recursive(outlook, parent_folder, structure):\n    \"\"\"\n    Create folders and subfolders recursively based on a given structure.\n    :param outlook: The outlook instance.\n    :param parent_folder: The parent folder where the structure starts.\n    :param structure: The folder structure defined in a dictionary.\n    \"\"\"\n    for folder_name, sub_structure in structure.items():\n        existing_folder = find_folder(parent_folder, folder_name)\n        if not existing_folder:",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "initialize_email_folders",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def initialize_email_folders(outlook):\n    \"\"\"\n    Initialize the required email folders based on a JSON-defined structure.\n    :param outlook: The outlook instance.\n    \"\"\"\n    folder_structure_json = \"\"\"\n    {\n        \"User_Email_Management\": {\n            \"Action_Required_Now\": {},\n            \"Action_Soon\": {},",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "set_email_folder_for_outlook_email",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def set_email_folder_for_outlook_email(outlook_email, folder_path, outlook):\n    \"\"\"\n    Move an email to the specified folder based on the provided path.\n    :param email: The email object to be moved.\n    :param folder_path: A list representing the path to the destination folder.\n    :param outlook: The outlook instance.\n    \"\"\"\n    namespace = outlook.GetNamespace(\"MAPI\")\n    root_folder = namespace.Folders.Item(1)  # Primary account\n    # Navigate through the folder path",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "api_key",
+        "kind": 5,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "api_key = os.getenv(\"OPENAI_API_KEY\")\n# Initialize OpenAI client with your API key\nopenai.api_key = api_key\n# Ensure the generation of COM libraries.\nwin32.gencache.EnsureDispatch(\"Outlook.Application\")\nconstants = win32.constants\noutlook = win32com.client.Dispatch(\"Outlook.Application\")\n# Type annotation for Cursor (assuming sqlite3, replace with your actual cursor type if different)\nCursor = sqlite3.Cursor\n# Context variable for SQLite connection",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "openai.api_key",
+        "kind": 5,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "openai.api_key = api_key\n# Ensure the generation of COM libraries.\nwin32.gencache.EnsureDispatch(\"Outlook.Application\")\nconstants = win32.constants\noutlook = win32com.client.Dispatch(\"Outlook.Application\")\n# Type annotation for Cursor (assuming sqlite3, replace with your actual cursor type if different)\nCursor = sqlite3.Cursor\n# Context variable for SQLite connection\nmatrix_connection_var: ContextVar[Optional[sqlite3.Connection]] = ContextVar(\n    \"matrix_connection\", default=None",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "constants",
+        "kind": 5,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "constants = win32.constants\noutlook = win32com.client.Dispatch(\"Outlook.Application\")\n# Type annotation for Cursor (assuming sqlite3, replace with your actual cursor type if different)\nCursor = sqlite3.Cursor\n# Context variable for SQLite connection\nmatrix_connection_var: ContextVar[Optional[sqlite3.Connection]] = ContextVar(\n    \"matrix_connection\", default=None\n)\n# Context variable for matrix cursor\nmatrix_cursor_var: ContextVar[Optional[sqlite3.Cursor]] = ContextVar(",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "outlook",
+        "kind": 5,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "outlook = win32com.client.Dispatch(\"Outlook.Application\")\n# Type annotation for Cursor (assuming sqlite3, replace with your actual cursor type if different)\nCursor = sqlite3.Cursor\n# Context variable for SQLite connection\nmatrix_connection_var: ContextVar[Optional[sqlite3.Connection]] = ContextVar(\n    \"matrix_connection\", default=None\n)\n# Context variable for matrix cursor\nmatrix_cursor_var: ContextVar[Optional[sqlite3.Cursor]] = ContextVar(\n    \"matrix_cursor_var\", default=None",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "Cursor",
+        "kind": 5,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "Cursor = sqlite3.Cursor\n# Context variable for SQLite connection\nmatrix_connection_var: ContextVar[Optional[sqlite3.Connection]] = ContextVar(\n    \"matrix_connection\", default=None\n)\n# Context variable for matrix cursor\nmatrix_cursor_var: ContextVar[Optional[sqlite3.Cursor]] = ContextVar(\n    \"matrix_cursor_var\", default=None\n)\nimport threading",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    }
+]
