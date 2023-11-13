@@ -781,23 +781,5 @@
         "peekOfCode": "Cursor = sqlite3.Cursor\n# Context variable for SQLite connection\nmatrix_connection_var: ContextVar[Optional[sqlite3.Connection]] = ContextVar(\n    \"matrix_connection\", default=None\n)\n# Context variable for matrix cursor\nmatrix_cursor_var: ContextVar[Optional[sqlite3.Cursor]] = ContextVar(\n    \"matrix_cursor_var\", default=None\n)\nimport threading",
         "detail": "Office_Assistent",
         "documentation": {}
-    },
-    {
-        "label": "connection",
-        "kind": 5,
-        "importPath": "test",
-        "description": "test",
-        "peekOfCode": "connection = sqlite3.connect(\"my_database.db\")\ncursor = connection.cursor()\ncursor.execute(\n    \"\"\"\n    CREATE TABLE IF NOT EXISTS email_types (\n        type TEXT PRIMARY KEY\n    )\n\"\"\"\n)\ncursor.execute(",
-        "detail": "test",
-        "documentation": {}
-    },
-    {
-        "label": "cursor",
-        "kind": 5,
-        "importPath": "test",
-        "description": "test",
-        "peekOfCode": "cursor = connection.cursor()\ncursor.execute(\n    \"\"\"\n    CREATE TABLE IF NOT EXISTS email_types (\n        type TEXT PRIMARY KEY\n    )\n\"\"\"\n)\ncursor.execute(\n    \"\"\"",
-        "detail": "test",
-        "documentation": {}
     }
 ]
