@@ -721,9 +721,6 @@ if __name__ == "__main__":
     )  # Assuming this function returns a list of Email objects
     for unread_email in unread_emails:
         email_priority = determine_email_priority(unread_email)
-
-        print(email_priority)
-
         outlook_email = find_outlook_email(outlook, unread_email)
         folder_path = ["User_Email_Management", email_priority]
         set_email_folder_for_outlook_email(outlook_email, folder_path, outlook)
