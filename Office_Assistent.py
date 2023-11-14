@@ -658,7 +658,7 @@ if __name__ == "__main__":
 
     # outlook = win32.Dispatch("Outlook.Application")
     unread_emails = get_unread_emails_from_outlook(
-        outlook
+        outlook, count=40
     )  # Assuming this function returns a list of Email objects
     for unread_email in unread_emails:
         outlook_email = find_outlook_email(outlook, unread_email)
