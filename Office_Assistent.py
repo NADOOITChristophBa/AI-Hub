@@ -180,51 +180,67 @@ def send_email_via_outlook(outlook, subject, body, recipient):
     mail.Send()
 
 
-def get_unread_emails_from_outlook(outlook, count=1):
+def get_most_recent_unread_emails_from_outlook(outlook, folder_path=None, count=1):
     print("Connecting to Outlook...")
     namespace = outlook.GetNamespace("MAPI")
-    inbox = namespace.GetDefaultFolder(
-        constants.olFolderInbox
-    )  # Use the constant for inbox
-    print("Getting inbox items...")
-    messages = inbox.Items
+
+    if folder_path:
+        # Navigate through the folder path
+        root_folder = namespace.Folders.Item(1)  # Primary account
+        target_folder = root_folder
+        for folder_name in folder_path:
+            target_folder = find_folder(target_folder, folder_name)
+            if not target_folder:
+                print(f"Folder '{folder_name}' not found in path.")
+                return []
+    else:
+        # Default to Inbox
+        print("No folder path provided. Using default Inbox...")
+        target_folder = namespace.GetDefaultFolder(constants.olFolderInbox)
+
+    print(f"Getting items from the specified folder...")
+    messages = target_folder.Items
     messages.Sort("[ReceivedTime]", True)
     print("Filtering unread messages...")
     unread_messages = [
         msg for msg in messages if msg.UnRead and msg.Class == constants.olMail
     ]
     print(f"Found {len(unread_messages)} unread mail message(s).")
-    emails = []
-
-    for msg in unread_messages[:count]:
-        # SenderName gives the display name of the sender
-        sender_name = msg.SenderName if hasattr(msg, "SenderName") else "Unknown Sender"
-        # SenderEmailAddress gives the actual email address of the sender
-        sender_email = (
-            msg.SenderEmailAddress
-            if hasattr(msg, "SenderEmailAddress")
-            else "Unknown Email"
-        )
-        received_time = (
-            msg.ReceivedTime if hasattr(msg, "ReceivedTime") else "Unknown Time"
-        )
-
-        print(
-            f"Processing email from {sender_name} <{sender_email}> received at {received_time}..."
-        )
-
-        email_obj = Email(
-            subject=msg.Subject,
-            body=msg.Body,
-            sender=sender_name,
-            sender_email=sender_email,  # Make sure to add this field to your Email class
-            received_time=received_time,
-        )
-        emails.append(email_obj)
-        # Be careful with the next line, it will mark your messages as read
-        # msg.UnRead = False
-
+    emails = process_emails(unread_messages, count)
     return emails
+
+
+def process_emails(messages, count):
+    emails = []
+    for msg in messages[:count]:
+        email_obj = build_email_object(msg)
+        emails.append(email_obj)
+        # msg.UnRead = False  # Uncomment to mark as read
+    return emails
+
+
+def build_email_object(msg):
+    sender_name = msg.SenderName if hasattr(msg, "SenderName") else "Unknown Sender"
+    sender_email = (
+        msg.SenderEmailAddress
+        if hasattr(msg, "SenderEmailAddress")
+        else "Unknown Email"
+    )
+    received_time = msg.ReceivedTime if hasattr(msg, "ReceivedTime") else "Unknown Time"
+    print(
+        f"Processing email from {sender_name} <{sender_email}> received at {received_time}..."
+    )
+    return Email(
+        subject=msg.Subject,
+        body=msg.Body,
+        sender=sender_name,
+        sender_email=sender_email,
+        received_time=received_time,
+    )
+
+
+def get_unread_emails_from_outlook_inbox(outlook, count=1):
+    return get_most_recent_unread_emails_from_outlook(outlook, count=count)
 
 
 def check_email_contains_appointment(sender_email: Email) -> List[Appointment]:
@@ -265,6 +281,8 @@ def check_email_contains_appointment(sender_email: Email) -> List[Appointment]:
         model="gpt-4-1106-preview",
         messages=messages,
         response_format={"type": "json_object"},
+        seed=1,
+        temperature=0,
         stop=["user:", "system:"],
     )
 
@@ -429,6 +447,8 @@ def get_email_type_for_email(email: Email) -> Optional[str]:
     response = client.chat.completions.create(
         model="gpt-4-1106-preview",
         messages=messages,
+        seed=1,
+        temperature=0,
         response_format={"type": "json_object"},
     )
 
@@ -536,10 +556,6 @@ def visualize_folder_structure(outlook):
 
 # Usage example
 # visualize_folder_structure(outlook_instance)
-
-import json
-
-
 def create_folder(outlook, folder_name, parent_folder):
     """
     Create a folder in Outlook within a specified parent folder.
@@ -651,6 +667,49 @@ def set_email_folder_for_outlook_email(outlook_email, folder_path, outlook):
         print(f"Error moving email: {e}")
 
 
+def determine_email_priority(sender_email: Email) -> str:
+    """Determine the priority of the email and categorize it into the appropriate folder based on detailed criteria."""
+
+    client = OpenAI()
+
+    # Clean up the email content
+    email_content = clean_email_content(sender_email.body)
+
+    # Detailed instructions for the AI to categorize the email
+    messages = [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant. Analyze the email and categorize it as 'Action_Required_Now', 'Action_Soon', or 'No_Action_Required'. Use these criteria: 'Action_Required_Now' for urgent matters like events already passed or happening in the next few days, and direct inquiries needing immediate response. 'Action_Soon' for events in the coming weeks. 'No_Action_Required' for informational content without the need for a response. Return the category in a JSON format like this example: {'priority_category': 'Action_Required_Now'}.",
+        },
+        {
+            "role": "user",
+            "content": "Here is an email subject and content. Determine its priority and categorize it accordingly.",
+        },
+        {"role": "user", "content": f"Subject: {sender_email.subject}"},
+        {"role": "user", "content": f"Content: {email_content}"},
+    ]
+
+    response = client.chat.completions.create(
+        model="gpt-4-1106-preview",
+        messages=messages,
+        seed=1,
+        temperature=0,
+        response_format={"type": "json_object"},
+        stop=["user:", "system:"],
+    )
+
+    # Access the response content
+    response_text = response.choices[0].message.content.strip()
+
+    # Convert the response text into a Python dictionary
+    response_data = json.loads(response_text)
+
+    # Determine the priority category
+    priority_category = response_data.get("priority_category", "No_Action_Required")
+
+    return priority_category
+
+
 if __name__ == "__main__":
     initialize_email_folders(outlook)
 
@@ -661,9 +720,9 @@ if __name__ == "__main__":
         outlook, count=40
     )  # Assuming this function returns a list of Email objects
     for unread_email in unread_emails:
+        email_priority = determine_email_priority(unread_email)
         outlook_email = find_outlook_email(outlook, unread_email)
-
-        folder_path = ["User_Email_Management", "Action_Required_Now"]
+        folder_path = ["User_Email_Management", email_priority]
         set_email_folder_for_outlook_email(outlook_email, folder_path, outlook)
 
     # read_email = get_read_email_from_unread_email(unread_email)
