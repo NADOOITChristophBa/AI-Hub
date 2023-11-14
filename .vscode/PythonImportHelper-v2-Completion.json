@@ -571,16 +571,43 @@
         "kind": 2,
         "importPath": "Office_Assistent",
         "description": "Office_Assistent",
-        "peekOfCode": "def send_email_via_outlook(outlook, subject, body, recipient):\n    \"\"\"Send an email using a provided Outlook instance.\"\"\"\n    mail = outlook.CreateItem(0)\n    mail.Subject = subject\n    mail.Body = body\n    mail.To = recipient\n    mail.Send()\ndef get_unread_emails_from_outlook(outlook, count=1):\n    print(\"Connecting to Outlook...\")\n    namespace = outlook.GetNamespace(\"MAPI\")",
+        "peekOfCode": "def send_email_via_outlook(outlook, subject, body, recipient):\n    \"\"\"Send an email using a provided Outlook instance.\"\"\"\n    mail = outlook.CreateItem(0)\n    mail.Subject = subject\n    mail.Body = body\n    mail.To = recipient\n    mail.Send()\ndef get_most_recent_unread_emails_from_outlook(outlook, folder_path=None, count=1):\n    print(\"Connecting to Outlook...\")\n    namespace = outlook.GetNamespace(\"MAPI\")",
         "detail": "Office_Assistent",
         "documentation": {}
     },
     {
-        "label": "get_unread_emails_from_outlook",
+        "label": "get_most_recent_unread_emails_from_outlook",
         "kind": 2,
         "importPath": "Office_Assistent",
         "description": "Office_Assistent",
-        "peekOfCode": "def get_unread_emails_from_outlook(outlook, count=1):\n    print(\"Connecting to Outlook...\")\n    namespace = outlook.GetNamespace(\"MAPI\")\n    inbox = namespace.GetDefaultFolder(\n        constants.olFolderInbox\n    )  # Use the constant for inbox\n    print(\"Getting inbox items...\")\n    messages = inbox.Items\n    messages.Sort(\"[ReceivedTime]\", True)\n    print(\"Filtering unread messages...\")",
+        "peekOfCode": "def get_most_recent_unread_emails_from_outlook(outlook, folder_path=None, count=1):\n    print(\"Connecting to Outlook...\")\n    namespace = outlook.GetNamespace(\"MAPI\")\n    if folder_path:\n        # Navigate through the folder path\n        root_folder = namespace.Folders.Item(1)  # Primary account\n        target_folder = root_folder\n        for folder_name in folder_path:\n            target_folder = find_folder(target_folder, folder_name)\n            if not target_folder:",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "process_emails",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def process_emails(messages, count):\n    emails = []\n    for msg in messages[:count]:\n        email_obj = build_email_object(msg)\n        emails.append(email_obj)\n        # msg.UnRead = False  # Uncomment to mark as read\n    return emails\ndef build_email_object(msg):\n    sender_name = msg.SenderName if hasattr(msg, \"SenderName\") else \"Unknown Sender\"\n    sender_email = (",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "build_email_object",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def build_email_object(msg):\n    sender_name = msg.SenderName if hasattr(msg, \"SenderName\") else \"Unknown Sender\"\n    sender_email = (\n        msg.SenderEmailAddress\n        if hasattr(msg, \"SenderEmailAddress\")\n        else \"Unknown Email\"\n    )\n    received_time = msg.ReceivedTime if hasattr(msg, \"ReceivedTime\") else \"Unknown Time\"\n    print(\n        f\"Processing email from {sender_name} <{sender_email}> received at {received_time}...\"",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "get_unread_emails_from_outlook_inbox",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def get_unread_emails_from_outlook_inbox(outlook, count=1):\n    return get_most_recent_unread_emails_from_outlook(outlook, count=count)\ndef check_email_contains_appointment(sender_email: Email) -> List[Appointment]:\n    \"\"\"Determine if the email is about appointments and return the details as a list.\"\"\"\n    client = OpenAI()\n    # Fetch required fields for appointment details from the database\n    required_fields = get_appointment_detail_fields()\n    required_fields_str = \", \".join(\n        required_fields\n    )  # Convert list to a comma-separated string",
         "detail": "Office_Assistent",
         "documentation": {}
     },
@@ -734,6 +761,15 @@
         "importPath": "Office_Assistent",
         "description": "Office_Assistent",
         "peekOfCode": "def set_email_folder_for_outlook_email(outlook_email, folder_path, outlook):\n    \"\"\"\n    Move an email to the specified folder based on the provided path.\n    :param email: The email object to be moved.\n    :param folder_path: A list representing the path to the destination folder.\n    :param outlook: The outlook instance.\n    \"\"\"\n    namespace = outlook.GetNamespace(\"MAPI\")\n    root_folder = namespace.Folders.Item(1)  # Primary account\n    # Navigate through the folder path",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "determine_email_priority",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def determine_email_priority(sender_email: Email) -> str:\n    \"\"\"Determine the priority of the email and categorize it into the appropriate folder based on detailed criteria.\"\"\"\n    client = OpenAI()\n    # Clean up the email content\n    email_content = clean_email_content(sender_email.body)\n    # Detailed instructions for the AI to categorize the email\n    messages = [\n        {\n            \"role\": \"system\",\n            \"content\": \"You are a helpful assistant. Analyze the email and categorize it as 'Action_Required_Now', 'Action_Soon', or 'No_Action_Required'. Use these criteria: 'Action_Required_Now' for urgent matters like events already passed or happening in the next few days, and direct inquiries needing immediate response. 'Action_Soon' for events in the coming weeks. 'No_Action_Required' for informational content without the need for a response. Return the category in a JSON format like this example: {'priority_category': 'Action_Required_Now'}.\",",
         "detail": "Office_Assistent",
         "documentation": {}
     },
