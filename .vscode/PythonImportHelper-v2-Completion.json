@@ -207,6 +207,15 @@
         "documentation": {}
     },
     {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "threading",
         "kind": 6,
         "isExtraImport": true,
@@ -769,7 +778,16 @@
         "kind": 2,
         "importPath": "Office_Assistent",
         "description": "Office_Assistent",
-        "peekOfCode": "def determine_email_priority(sender_email: Email) -> str:\n    \"\"\"Determine the priority of the email and categorize it into the appropriate folder based on detailed criteria.\"\"\"\n    client = OpenAI()\n    # Clean up the email content\n    email_content = clean_email_content(sender_email.body)\n    # Detailed instructions for the AI to categorize the email\n    messages = [\n        {\n            \"role\": \"system\",\n            \"content\": \"You are a helpful assistant. Analyze the email and categorize it as 'Action_Required_Now', 'Action_Soon', or 'No_Action_Required'. Use these criteria: 'Action_Required_Now' for urgent matters like events already passed or happening in the next few days, and direct inquiries needing immediate response. 'Action_Soon' for events in the coming weeks. 'No_Action_Required' for informational content without the need for a response. Return the category in a JSON format like this example: {'priority_category': 'Action_Required_Now'}.\",",
+        "peekOfCode": "def determine_email_priority(sender_email: Email) -> str:\n    \"\"\"Determine the priority of the email and categorize it into the appropriate folder based on detailed criteria.\"\"\"\n    client = OpenAI()\n    # Clean up the email content\n    email_content = clean_email_content(sender_email.body)\n    # Get the current date and time\n    current_time_and_date = get_current_time_and_date()\n    # Detailed instructions for the AI to categorize the email\n    messages = [\n        {",
+        "detail": "Office_Assistent",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_time_and_date",
+        "kind": 2,
+        "importPath": "Office_Assistent",
+        "description": "Office_Assistent",
+        "peekOfCode": "def get_current_time_and_date():\n    now = datetime.datetime.now()\n    return now.strftime(\"%Y-%m-%d %H:%M:%S\")\nif __name__ == \"__main__\":\n    initialize_email_folders(outlook)\n    # visualize_folder_structure(outlook)\n    # outlook = win32.Dispatch(\"Outlook.Application\")\n    unread_emails = get_unread_emails_from_outlook_inbox(\n        outlook, count=40\n    )  # Assuming this function returns a list of Email objects",
         "detail": "Office_Assistent",
         "documentation": {}
     },
