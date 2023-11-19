@@ -9,6 +9,7 @@ from openai import OpenAI
 from contextvars import ContextVar
 from typing import Optional, Callable, List
 from dotenv import load_dotenv
+import datetime
 
 # Load environment variables from .env.
 load_dotenv()
@@ -675,19 +676,23 @@ def determine_email_priority(sender_email: Email) -> str:
     # Clean up the email content
     email_content = clean_email_content(sender_email.body)
 
+    # Get the current date and time
+    current_time_and_date = get_current_time_and_date()
+
     # Detailed instructions for the AI to categorize the email
     messages = [
         {
             "role": "system",
-            "content": "You are a helpful assistant. Analyze the email and categorize it as 'Action_Required_Now', 'Action_Soon', or 'No_Action_Required'. Use these criteria: 'Action_Required_Now' for urgent matters like events already passed or happening in the next few days, and direct inquiries needing immediate response. 'Action_Soon' for events in the coming weeks. 'No_Action_Required' for informational content without the need for a response. Return the category in a JSON format like this example: {'priority_category': 'Action_Required_Now'}.",
+            "content": "You are a helpful assistant. Analyze the email and categorize it as 'Action_Required_Now', 'Action_Soon', or 'No_Action_Required'. Use specific criteria for each category. Consider the context of the email, including the sender's role and previous communications. Confirm your decision before finalizing. Return the category in a simplified JSON format like {'category': 'Action_Required_Now'}. Handle uncertain cases with a specific procedure and collect feedback for continuous improvement. Consider the current date and time: {current_time_and_date}."
         },
         {
             "role": "user",
-            "content": "Here is an email subject and content. Determine its priority and categorize it accordingly.",
+            "content": "Here is an email subject and content. Determine its priority and categorize it accordingly."
         },
-        {"role": "user", "content": f"Subject: {sender_email.subject}"},
-        {"role": "user", "content": f"Content: {email_content}"},
+        {"role": "user", "content": "Subject: {sender_email.subject}"},
+        {"role": "user", "content": "Content: {email_content}"}
     ]
+
 
     response = client.chat.completions.create(
         model="gpt-4-1106-preview",
@@ -705,9 +710,14 @@ def determine_email_priority(sender_email: Email) -> str:
     response_data = json.loads(response_text)
 
     # Determine the priority category
-    priority_category = response_data.get("priority_category", "No_Action_Required")
+    priority_category = response_data.get("category", "No_Action_Required")
 
     return priority_category
+
+
+def get_current_time_and_date():
+    now = datetime.datetime.now()
+    return now.strftime("%Y-%m-%d %H:%M:%S")
 
 
 if __name__ == "__main__":
@@ -716,7 +726,7 @@ if __name__ == "__main__":
     # visualize_folder_structure(outlook)
 
     # outlook = win32.Dispatch("Outlook.Application")
-    unread_emails = get_unread_emails_from_outlook(
+    unread_emails = get_unread_emails_from_outlook_inbox(
         outlook, count=40
     )  # Assuming this function returns a list of Email objects
     for unread_email in unread_emails:
